@@ -1,0 +1,120 @@
+.homepage-container {
+    width: 1512px;
+    height: 982px;
+    background: #F6EEF0;
+    opacity: 0.9;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Left Side with Image */
+  .homepage-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    position: relative;
+  }
+  
+  .homepage-left img {
+    object-fit: contain;
+    width: 1000px;
+    height: 500px;
+    border-radius: 118px;
+    transform: translate(0px, -40px); /* ← left, ↑ up */
+  }
+  
+  /* Right Side */
+  .homepage-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    position: relative;
+    color: #4C3D40;
+    transform: translate(-50px, 0px); /* ← left, ↑ up */
+    
+  }
+  
+  /* Wrapper to move content only (not logo) */
+  .homepage-content-wrapper {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Logo */
+  .homepage-logo {
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    width: 400px;
+    height: auto;
+    border-radius: 118px;
+    transform: translate(100px, -120px); /* ← left, ↑ up */
+  }
+  
+  /* Headings */
+  .homepage-content h1 {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 75px;
+    margin-bottom: 10px;
+    transform: translate(-420px, -200px); /* ← left, ↑ up */
+    
+  }
+  
+  .homepage-subtext {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    transform: translate(-200px, -120px); /* ← left, ↑ up */
+
+  }
+  
+  /* Buttons */
+  .homepage-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .homepage-buttons button {
+    width: 308px;
+    height: 116px;
+    background: #C8B4D0;
+    border: 1px solid #C8B4D0;
+    border-radius: 100px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    transform: translate(-200px, -120px); /* ← left, ↑ up */
+    
+  }
+  .homepage-quote {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+    color: #4C3D40;
+    opacity: 1;
+    transform: translate(-420px, -150px); /* ← left, ↑ up */
+  }
+
+  .homepage-buttons button:hover {
+    background-color: #F6EEF0;
+    color: #4C3D40;
+  }
+  
