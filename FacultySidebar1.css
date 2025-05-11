@@ -1,0 +1,54 @@
+/* FacultySidebar1.css */
+
+/* Background color applied only to the Faculty Dashboard */
+.faculty-dashboard-wrapper {
+  background-color: #F6EEF0; /* Light pink background color */
+  width: 100%;  /* Ensure it covers the full width */
+  height: 100vh; /* Full height of the viewport */
+}
+
+/* Sidebar styles */
+.sidebar-dark {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 16px;
+
+  position: absolute;
+  width: 256px;
+  height: 1641px;
+  left: 0px;
+  top: 0px;
+
+  background: #4C3D40; /* Gray/800 */
+}
+
+/* Background styling for the sidebar */
+.sidebar-bg {
+  position: absolute;
+  width: 1144px;
+  height: 191px;
+  left: 304px;  /* Adjusted from 256px to 300px */
+  top: 66px;    /* Top remains the same */
+  background: #C8B4D0;  /* Updated background color */
+}
+
+/* Title container inside the sidebar */
+.sidebar-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 0px;
+  width: 100%; /* Make it span the full width */
+  height: 31px; /* Adjust height of the title container */
+}
+
+/* Sidebar title */
+.sidebar-title {
+  color: white; /* White text color */
+  font-size: 18px; /* Font size for the title */
+  font-weight: bold; /* Make the title bold */
+  margin: 0; /* Remove margin */
+}

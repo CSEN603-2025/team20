@@ -1,0 +1,252 @@
+/* Faculty Dashboard Wrapper */
+.faculty-dashboard-wrapper {
+  display: flex;
+  background-color: #F6EEF0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  margin-left: 256px;  /* Makes room for the sidebar */
+  padding: 24px;
+  width: calc(100% - 256px);  /* Ensures content takes up remaining space */
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  color: #333;  /* Ensure text is dark enough to be visible */
+}
+
+/* Navbar on the right side */
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 60px;
+}
+
+/* Profile Picture */
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: -40px;
+}
+
+/* Frame for Internship Reports */
+.frame-926 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 8px;
+
+  width: 1074px;
+  height: 51px;
+  position:relative;
+  top:200px;
+  margin-left: 25px;
+}
+
+/* Internship Reports Text */
+.frame-926 span {
+  color: #4C3D40; /* Dark color for text visibility */
+  font-size: 20px; /* Adjust font size */
+  font-weight: bold; /* Make the text bold */
+}
+
+/* FacultyDashboard.css */
+.editable-table {
+  width: 100%; /* Make the table fit the width of the page */
+  max-width: 100%; /* Ensure it doesn't overflow */
+  border-collapse: collapse; /* Remove space between cells */
+  margin: 20px 0;
+  table-layout: fixed; /* Ensures the table width is distributed evenly */
+  color: #333;  /* Ensure table text is visible */
+}
+
+.editable-table th, .editable-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ccc;
+  word-wrap: break-word;
+  min-width: 150px; /* Set minimum width for cells */
+}
+
+.editable-table td[contenteditable="true"] {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.editable-table th {
+  background-color: #4C3D40;
+  color: white;  /* Ensure header text is visible */
+  font-weight: bold;
+}
+
+.editable-table td {
+  background-color: #ffffff;
+}
+
+/* Optional: Add scroll if content gets too long */
+.editable-table-container {
+  max-height: 300px;  /* Set a max height for the table container */
+  overflow-y: auto;    /* Enable vertical scrolling */
+}
+
+.scrollable-table-container {
+  width: 100%;
+  overflow-x: auto; /* Allows small screens to scroll horizontally if needed */
+}
+
+.scrollable-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto; /* Let columns size based on content */
+}
+
+.scrollable-table th,
+.scrollable-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  white-space: normal; /* Wrap long text */
+}
+
+.scrollable-table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 180px;   /* Moves table down */
+  margin-left: 24px;   /* Moves table to the right */
+}
+
+@media (max-width: 768px) {
+  .scrollable-table {
+    font-size: 14px;
+  }
+}
+
+.report-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.report-box {
+  background-color: white;
+  padding: 20px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+}
+
+.report-box h3 {
+  margin-top: 0;
+}
+
+.report-box button {
+  background-color: #4C3D40;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  float: right;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.comment-section {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.comment-section select {
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.comment-section textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.comment-section button {
+  padding: 6px 12px;
+  background-color: #4C3D40;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.comment-section button:hover {
+  background-color: #6C4F56;
+}
+
+/* Custom Button Styles */
+.theme-button {
+  width: 313.97px;
+  height: 41.31px;
+  background-color: #C8B4D0; /* light purple color */
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: 1px solid #C8B4D0;
+  margin-top: 10px;
+}
+
+.theme-button:hover {
+  background-color: #F6EEF0;
+  color: #4C3D40; /* dark color for text */
+}
+
+/* Button with transparent hover */
+
+.theme-button {
+  background-color: #4C3D40;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.theme-button:hover {
+  background-color: #6B5A5F; /* slightly lighter brownish purple */
+}
