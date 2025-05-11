@@ -1,0 +1,16 @@
+/* FacultyDashboard.module.css */
+
+.dashboard-container {
+  height: 100vh;
+  background-color: #F6EEF0; /* Set the background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+h2 {
+  color: #4C3D40;
+  font-size: 28px;
+}
