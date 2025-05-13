@@ -1,0 +1,125 @@
+/* Sidebar styles */
+.sidebar-dark {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 16px;
+  height: 100vh;
+  background: #4c3d40;
+  position: absolute;
+  left: 0;
+  width: 256px;
+  transition: left 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+  z-index: 5;
+}
+
+.sidebar-dark.collapsed {
+  left: -192px; /* Slide out to the left, full width - collapsed width */
+  opacity: 1;
+  overflow: hidden;
+}
+
+/* Sidebar toggle button (chevron icon) */
+.sidebar-toggle {
+  position: absolute;
+  top: 20px;
+  right: -3px;
+  /* strip out the box */
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  /* keep it clickable */
+  cursor: pointer;
+  z-index: 10;
+  transition: right 0.3s ease;
+}
+
+
+.sidebar-title {
+  color: #F6EEF0;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.sidebar-link {
+  color: #F6EEF0;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  gap: 6px;
+}
+
+.sidebar-link:hover {
+  opacity: 0.8;
+}
+
+.internship-link {
+  color: #F6EEF0;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  margin-top: 12px;
+}
+
+.internship-link:hover {
+  background-color: #3b2f31;
+  color: #ffffff;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  margin-right: 8px;
+}
+
+.label-text {
+  white-space: nowrap;
+}
+
+.profile-link {
+  margin-top: 6px !important;
+}
+
+/* ✅ IMPROVEMENTS BELOW (for icon visibility when collapsed) */
+.sidebar-icon {
+  min-width: 20px;
+  font-size: 18px;
+}
+
+.sidebar-label {
+  margin-left: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.hide-label {
+  display: none;
+}
+
+
+/* —————————————————————————————
+   Reset list bullets & spacing
+   ————————————————————————————— */
+.sidebar-content ul,
+.sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-content li,
+.sidebar-menu li {
+  list-style: none;
+}
