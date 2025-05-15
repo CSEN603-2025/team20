@@ -1,0 +1,32 @@
+.profile-page-wrapper {
+    padding: 20px;
+    background-color: #f6eef0;
+  }
+  
+  .go-back-button {
+    padding: 10px 20px;
+    background-color: #4C3D40;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .go-back-button:hover {
+    background-color: #3a2f2d;
+  }
+  
+  .profile-info {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-info h2 {
+    font-size: 24px;
+    color: #4C3D40;
+  }
+  

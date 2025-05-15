@@ -1,0 +1,114 @@
+/* Page Background */
+body {
+    background-color: #F6EEF0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .apply-internship-container {
+    width: 600px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+  
+  .apply-internship-container h2 {
+    text-align: center;
+    color: #4C3D40;
+  }
+  
+  .apply-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .apply-form input[type="text"],
+  .apply-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .apply-form input[type="file"] {
+    border: none;
+    margin-top: 10px;
+  }
+  
+  .apply-form button {
+    background-color: #4C3D40;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .apply-form button:hover {
+    background-color: #6c5b56;
+  }
+  
+  .applications-list {
+    margin-top: 20px;
+  }
+  
+  .application-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .application-card.pending {
+    border-left: 5px solid orange;
+  }
+  
+  .document-list {
+    margin-top: 10px;
+  }
+  
+  .document-list ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  /* Header for applications list */
+  h3 {
+    color: #4C3D40;
+  }
+  
+  /* Application Card Styles */
+  .application-card h4 {
+    color: #4C3D40;
+    margin-bottom: 5px;
+  }
+  .application-card p {
+    margin: 5px 0;
+  }
+  
+  /* Uploaded Documents Styling */
+  .document-list h4 {
+    margin-bottom: 5px;
+    color: #4C3D40;
+  }
+  .document-upload-section {
+    margin-top: 15px;
+  }
+  
+  .document-upload-section h4 {
+    color: #4C3D40;
+    margin-bottom: 5px;
+  }
+  
+  .document-description {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+    

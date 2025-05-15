@@ -1,0 +1,140 @@
+.my-internships-wrapper {
+    display: flex;
+    background-color: #F6EEF0;
+    height: 100vh;
+  }
+  
+  .my-internships-content {
+    padding: 20px;
+    width: 100%;
+    transition: margin-left 0.3s ease;
+    margin-left: 260px;
+  }
+  
+  .my-internships-content.collapsed {
+    margin-left: 60px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .my-internships-filter-section {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .my-internships-filter-section select,
+  .my-internships-filter-section input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+  }
+  
+  .my-internships-filter-section input {
+    width: 150px;
+  }
+  
+  .my-internships-filter-section button {
+    background-color: #4c3d40;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .my-internships-filter-section button:hover {
+    background-color: #6c5b56;
+  }
+  
+  .my-internships-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .my-internships-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .my-internships-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .my-internships-card.accepted {
+    border-left: 5px solid #4CAF50;
+  }
+  
+  .my-internships-card.pending {
+    border-left: 5px solid #FFC107;
+  }
+  
+  .my-internships-card.rejected {
+    border-left: 5px solid #F44336;
+  }
+  
+  .my-internships-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .my-internships-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 5px 0;
+  }
+/* Adjust Date Filter Style */
+.my-internships-filter-section input[type="date"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    width: 150px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  /* Reset Filters Button */
+  .reset-filters-btn {
+    padding: 8px 15px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reset-filters-btn:hover {
+    background-color: #c9302c;
+  }
+  
+  /* Align Filters and Reset Button */
+  .my-internships-filter-section {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+    
