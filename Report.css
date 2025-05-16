@@ -1,0 +1,182 @@
+/* Report.css */
+
+/* push the cards down below the header */
+.cards-panel.narrow-cards {
+    margin-top: 360px;  /* match your .bg-header height */
+  }
+  
+  /* allow cards to position their button row */
+  .cards-panel.narrow-cards .card {
+    position: relative;
+    padding-bottom: 60px;
+  }
+  
+  /* pin the buttons to the bottom-right of each card */
+  .cards-panel.narrow-cards .card .card-actions {
+    position: absolute;
+    bottom: 8px;
+    right: 20px;
+    left: auto;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+  .download-btn {
+    position: absolute;
+    top: -130px;           /* distance from the top of its nearest positioned ancestor */
+    right: 10px;         /* distance from the right */
+    color: #4C3D40;      /* your brand color */
+    font-size: 1.25rem;  /* adjust icon size if needed */
+    background: transparent;
+    border: none;
+    text-decoration: none;
+    padding: 0;
+    cursor: pointer;
+  }
+.card {
+  position: relative;
+}
+/* make the header title white and center it vertically */
+/* make the report header title white */
+.report-title {
+    color: #fff;
+    margin: 0;          /* reset default margins */
+    font-size: 1.5rem; 
+    margin-left: 0px;  /* move left */
+  margin-top: 100px;   /* move down */ /* whatever size you prefer */
+  }
+  
+  /* Optionally center it horizontally inside the purple bar */
+  .bg-header {
+    display: flex;
+    align-items: center;      /* vertical center */
+    justify-content: center;
+     
+  }
+  /* Generate Statistics Report button */
+.filter-btn {
+    background-color: #4C3D40;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;          /* fixed typo */
+  }
+  .filter-btn:hover {
+    background-color: #4C3D40;
+  }
+  
+  /* modal overlay and box */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  .modal-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+  }
+  
+  /* optional: style the “Close” button inside the modal */
+  .modal-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #555;
+  }
+  .modal-close:hover {
+    color: #000;
+  }
+  
+  /* Remove native dropdown arrows and any default styling */
+.search-wrapper select {
+    -webkit-appearance: none;  /* Safari & Chrome */
+    -moz-appearance: none;     /* Firefox */
+    appearance: none;          /* Standard */
+    background-image: none;    /* Remove any built-in arrow graphic */
+    padding-right: 8px;   
+    width: 110px;           /* adjust as needed */
+  height: 40px;           /* taller box */
+  padding: 6px 12px;      /* more internal space */
+  font-size: 1rem;        /* larger text */
+  border-radius: 4px;     /* optional rounding */
+  box-sizing: border-box;     /* make room if you add your own icon later */
+  }
+  
+  /* If you also want to remove the blue focus outline: */
+  .search-wrapper select:focus {
+    outline: none;
+  }
+  /* Remove the native blue shading behind the selected option */
+.cards-panel.narrow-cards .card select {
+    -webkit-appearance: none;  /* remove default arrow & shading in WebKit */
+    -moz-appearance: none;     /* remove in Firefox */
+    appearance: none;          /* standard reset */
+    background-color: transparent;  /* no background color */
+    color: inherit;                 /* same text color as surrounding */
+    border: 1px solid #ccc;         /* optional: give it your own border */
+    padding: 4px 8px;               /* match your other selects */
+    border-radius: 4px;
+  }
+  
+  /* If you want the dropdown arrow back, you can add your own via background-image: */
+  .cards-panel.narrow-cards .card select {
+    background: transparent url("data:image/svg+xml;charset=UTF-8,<svg ...>") no-repeat right 8px center;
+    /* optional custom arrow SVG, or remove altogether */
+  }
+/* Report.css */
+
+/* 1) Base reset for all selects in cards */
+.cards-panel.narrow-cards .card select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 6px 32px 6px 8px;   /* extra right padding for our arrow */
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* 2) Custom arrow via SVG background */
+  .cards-panel.narrow-cards .card select {
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8L0 0h12L6 8z' fill='%236F4E37'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+  }
+  
+  /* 3) On focus, change border color */
+  .cards-panel.narrow-cards .card select:focus {
+    outline: none;
+    border-color: #4C3D40;
+  }
+/* in Report.css (or your global CSS) */
+.filter-btn {
+    text-decoration: none;
+  }
+  
+  .filter-btn:hover {
+    text-decoration: none;
+  }
+      
+  
+    
+  
