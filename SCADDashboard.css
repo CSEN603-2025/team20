@@ -15,12 +15,11 @@
   width: 64px;
 }
 
-/* Title + Toggle Container */
+/* Title + Toggle */
 .sidebar-title-container {
   display: flex;
   align-items: center;
   padding: 24px 16px;
-  box-sizing: border-box;
 }
 .sidebar-title {
   margin: 0;
@@ -31,31 +30,9 @@
 .scad-wrapper.collapsed .sidebar-title {
   display: none;
 }
-
-/* Sidebar Items */
-.sidebar-item {
-  display: block;
-  width: 100%;
-  padding: 12px 16px;
-  background: none;
-  border: none;
-  color: #F6EEF0;
-  text-align: left;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-.sidebar-item:hover {
-  color: #ddd;
-}
-.sidebar-item.active {
-  color: #ddd;
-}
-
-/* Toggle Button */
 .toggle-btn {
   background: none;
   border: none;
-  padding: 0;
   margin-left: auto;
   width: 24px;
   height: 24px;
@@ -75,7 +52,38 @@
   transform: rotate(45deg);
 }
 
-/* === MAIN CONTENT & TOP BAR === */
+/* Sidebar Items */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  color: #F6EEF0;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s;
+}
+.sidebar-item svg {
+  margin-right: 10px;
+}
+.scad-wrapper.collapsed .sidebar-item {
+  justify-content: center;
+  padding: 12px;
+}
+.scad-wrapper.collapsed .sidebar-item span {
+  display: none;
+}
+.sidebar-item:hover {
+  color: #ddd;
+  background-color: #5a4a4d;
+}
+.sidebar-item.active {
+  background-color: #6c5b56;
+  color: #fff;
+}
+
+/* === MAIN & TOP BAR === */
 .main-content {
   flex: 1;
   position: relative;
@@ -85,126 +93,163 @@
 }
 .top-bar {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 191px;
   background: #C8B4D0;
   display: flex;
   align-items: flex-end;
   padding: 0 24px 16px;
+  justify-content: space-between;
 }
 .dashboard-title {
-  margin: 0;
+  margin: 0; color: #fff;
+  font-size: 1.75rem; font-weight: 600;
+}
+
+/* User Profile Section */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: #fff;
-  font-size: 1.75rem;
-  font-weight: 600;
+}
+.user-profile span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.user-profile svg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff;
+  color: #4C3D40;
+  padding: 4px;
 }
 
 /* === CONTENT AREA === */
-.dashboard-content {
-  padding: 24px;
-}
+.dashboard-content { padding: 24px; }
+.content-container { max-width: 800px; margin: 0 auto; }
 
-/* === COMMON WRAPPER === */
-.content-container {
-  max-width: 800px;
-  margin: 0 auto;
+/* Project Cards (New Boxes for Dashboard) */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 24px;
+  position: absolute;
+  width: 251px;
+  height: 157px;
+  top: 172px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 4px rgba(13, 23, 33, 0.08), 0px 1px 2px rgba(21, 30, 40, 0.08);
+  border-radius: 8px;
 }
+.project-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #4C3D40;
+}
+/* Adjust positions for each card */
+.project-card-1 { left: 346px; }
+.project-card-2 { left: 613px; } /* 346 + 251 + 16 */
+.project-card-3 { left: 880px; } /* 613 + 251 + 16 */
+
+/* === NARROW CARDS WRAPPER === */
+.narrow-cards { max-width: 600px; margin: 0 auto; }
 
 /* === SEARCH & FILTER === */
+.search-container { position: relative; }
 .search-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 24px 0 16px;
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 16px;
 }
 .search-input {
-  flex: 1;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  flex: 1; padding: 8px 12px;
+  border: 1px solid #ccc; border-radius: 4px;
 }
 .filter-btn {
-  padding: 6px 10px;
-  background: #4C3D40;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  padding: 6px 10px; background: #4C3D40; color: #fff;
+  border: none; border-radius: 4px; cursor: pointer;
 }
-.filter-btn:hover {
-  background: #6c5b56;
-}
+.filter-btn:hover { background: #6c5b56; }
 
 /* === DROPDOWN FACETS === */
 .facet-dropdown {
-  position: absolute;
-  top: 110%;
-  left: 0;
-  width: 300px;
-  background: #fff;
+  position: fixed;
+  top: 40%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  min-width: 300px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow: auto;
+  z-index: 1000;
+  background: white;
   border: 1px solid #ccc;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   border-radius: 4px;
-  padding: 12px;
-  z-index: 10;
+  padding: 1rem;
 }
-.toggle-all {
-  background: none;
-  border: none;
-  color: #0066cc;
-  cursor: pointer;
-  margin-bottom: 8px;
-}
-.facet-group {
-  margin-bottom: 12px;
-}
-.facet-label {
-  display: block;
-  margin-bottom: 4px;
-  font-weight: 500;
-}
-.facet-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.facet-option {
-  display: flex;
-  align-items: center;
-}
-.facet-option input {
-  margin-right: 4px;
+.toggle-all { background: none; border: none; color: #0066cc; cursor: pointer; margin-bottom: 8px; }
+.facet-group { margin-bottom: 12px; }
+.facet-label { display: block; margin-bottom: 4px; font-weight: 500; }
+.facet-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.facet-option { display: flex; align-items: center; }
+.facet-option input { margin-right: 4px; }
+
+.card-select option:first-child {
+  color: #444;
 }
 
 /* === CARDS === */
-.cards-panel {
-  padding: 0 24px;
-}
-.cards-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+.cards-panel { padding-top: 16px; }
+.cards-list { display: flex; flex-direction: column; gap: 16px; }
 .card {
-  background: #fff;
-  padding: 16px;
-  border-radius: 8px;
+  background: #fff; padding: 16px; border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  display: flex; flex-direction: column; gap: 8px;
 }
-.card h3 {
-  margin: 0;
-  font-size: 1.2rem;
+.card-actions {
+  display: flex; gap: 8px; margin-top: 8px;
 }
-.card p {
-  margin: 0;
-  color: #444;
-}
+.card h3 { margin: 0; font-size: 1.2rem; }
+.card p { margin: 0; color: #444; }
 .card-select,
+.view-btn {
+  background: #4C3D40; color: #fff;
+  border: none; border-radius: 4px;
+  padding: 6px 10px; cursor: pointer;
+}
+.card-select:hover,
+.view-btn:hover { background: #6c5b56; }
+
+/* === DOWNLOAD LINK === */
+.download-btn {
+  background: #4C3D40; color: #F6EEF0;
+  padding: 6px 10px; border-radius: 4px;
+  text-decoration: none; align-self: flex-end;
+  display: inline-block;
+}
+.download-btn:hover { background: #6c5b56; }
+
+/* === MODAL === */
+.modal-overlay {
+  position: fixed; top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.4);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 100;
+}
+.modal-content {
+  background: #fff; padding: 24px; border-radius: 8px;
+  max-width: 400px; width: 90%; position: relative;
+}
+.modal-close {
+  position: absolute; top: 8px; right: 8px;
+  background: none; border: none; font-size: 1.25rem;
+  cursor: pointer;
+}
+
 .view-btn {
   background: #4C3D40;
   color: #fff;
@@ -212,50 +257,108 @@
   border-radius: 4px;
   padding: 6px 10px;
   cursor: pointer;
-  align-self: flex-end;
 }
-.card-select:hover,
 .view-btn:hover {
   background: #6c5b56;
 }
 
-/* === DOWNLOAD LINK === */
-.download-btn {
-  background: #4C3D40;
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 4px;
-  text-decoration: none;
-  align-self: flex-end;
-  display: inline-block;
+/* Notifications modal scrollable list */
+.modal-content ul.notifications-list {
+  list-style: none;
+  padding: 0;
+  max-height: 60vh;
+  overflow-y: auto;
 }
-.download-btn:hover {
-  background: #6c5b56;
+.modal-content ul.notifications-list li {
+  margin-bottom: 12px;
+}
+.modal-content ul.notifications-list li p {
+  margin: 0;
+}
+.modal-content ul.notifications-list li small {
+  color: #666;
 }
 
-/* === MODAL === */
-.modal-overlay {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.4);
+/* ─── In-Call Controls ─── */
+.modal-content .call-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+.modal-content .call-controls button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+.modal-content .call-controls button:hover {
+  background: #6c5b56;
+  color: #fff;
+}
+
+/* Accept buttons → green, Decline/End → red */
+.modal-content .filter-btn.accept,
+.modal-content .call-controls button:not(.decline) {
+  background: #28a745;
+  color: white;
+}
+.modal-content .filter-btn.decline,
+.modal-content .call-controls .decline {
+  background: #dc3545;
+  color: white;
+}
+.call-controls button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ─── Video Toggle Icons ─── */
+.call-controls {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  z-index: 100;
+  gap: 0.5rem;
+  padding: 1rem;
 }
-.modal-content {
-  background: #fff;
-  padding: 24px;
-  border-radius: 8px;
-  max-width: 400px;
-  width: 90%;
-  position: relative;
-}
-.modal-close {
-  position: absolute;
-  top: 8px; right: 8px;
+.icon-btn {
   background: none;
   border: none;
-  font-size: 1.25rem;
+  padding: 0.25rem;
+  margin: 0 0.5rem;
   cursor: pointer;
+  color: inherit;
+}
+.icon-btn.decline {
+  color: #dc3545;
+}
+.icon-btn:hover {
+  opacity: 0.8;
+}
+
+/* Login Panel */
+.login-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+.login-panel h2 {
+  margin-bottom: 16px;
+  color: #4C3D40;
+}
+.login-panel button {
+  padding: 8px 16px;
+  background: #4C3D40;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.login-panel button:hover {
+  background: #6c5b56;
 }
