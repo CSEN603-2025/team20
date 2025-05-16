@@ -1,0 +1,112 @@
+.internships-list {
+  max-width: 640px;
+  margin: auto;               /* centers horizontally and vertically */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 0;
+
+}
+/* Prevent body scrolling */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;  /* disable scroll on whole page */
+}
+
+/* Make main-content scrollable */
+.main-content {
+  margin-left: 256px;  /* leave space for fixed sidebar */
+  height: 100vh;       /* full viewport height */
+  overflow-y: auto;    /* scroll only main content */
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #F6EEF0; /* keep your background */
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: #fff;
+  padding: 24px 30px;
+  border-radius: 10px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+
+/* Add this to your existing CSS */
+.internship-form label {
+  display: block;
+  color: #4C3D40;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.internship-form input[type="text"],
+.internship-form input[type="checkbox"],
+.internship-form textarea {
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.internship-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.internship-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.submit-button {
+  background-color: #4C3D40;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: #f0f0f0;
+  color: #4C3D40;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -1,0 +1,192 @@
+/* Page Wrapper */
+.internships-page-wrapper {
+    display: flex;
+    height: 300vh;
+    
+    background-color: #F6EEF0;
+    overflow: hidden;
+  }
+  
+  /* Main Content Area */
+  .available-internships-container {
+    flex-grow: 1;
+    background-color: #F6EEF0;
+    padding: 20px;
+    transition: width 0.3s ease;
+    height: 100vh; /* Make it fill the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling for the whole container */
+    /* Increase width */
+    width: 80vw; /* You can adjust this value as needed */
+    max-width: 1200px; /* Optional: set a max width for large screens */
+    margin: 0 auto;    /* Center the container */
+  }
+  
+  .available-internships-container.collapsed {
+    transform: translate(64px, 0px);
+  }
+  
+  .available-internships-container:not(.collapsed) {
+    transform: translate(256px, 0px);
+  }
+  
+  /* Internships List */
+  .internships-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    transform: none;
+  }
+  
+  /* Internship Card */
+  .internship-card {
+    background-color: #fff;
+    width: 50%;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .internship-card h3 {
+    margin-bottom: 8px;
+  }
+  
+  .internship-card p {
+    margin-bottom: 4px;
+  }
+  
+  .internship-card button {
+    background-color: #4C3D40;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .internship-card button:hover {
+    background-color: #6c5b56;
+  }
+  
+  /* Search and Filter Section */
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    transform: none;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Filters */
+  .filters {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+    transform: none;
+  }
+  
+  .filters select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Popup Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 200vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transform: translate(-100px,-500px);
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 500px;
+  text-align: left;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+  color: #4C3D40;
+}
+
+.modal-content p {
+  margin: 5px 0;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .apply-button {
+    background-color: #4C3D40;
+    color: white;
+    padding: 8px 15px;
+    margin-left: 15px; /* Slight shift to the right */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .apply-button:hover {
+    background-color: #6c5b56;
+  }
+  /* Filters Section */
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #F6EEF0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.filters select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.filters select:hover {
+  border-color: #4C3D40;
+}
+
+.filters label {
+  font-weight: bold;
+  color: #4C3D40;
+}
