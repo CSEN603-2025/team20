@@ -1,4 +1,4 @@
-/* Report.css */
+
 
 /* push the cards down below the header */
 .cards-panel.narrow-cards {
@@ -15,7 +15,7 @@
   .cards-panel.narrow-cards .card .card-actions {
     position: absolute;
     bottom: 8px;
-    right: 20px;
+    right: 10px;
     left: auto;
     display: flex;
     gap: 8px;
@@ -170,13 +170,9 @@
   }
 /* in Report.css (or your global CSS) */
 .filter-btn {
-    text-decoration: none;
-  }
-  
-  .filter-btn:hover {
-    text-decoration: none;
-  }
-      
-  
-    
-  
+  text-decoration: none;
+}
+
+.filter-btn:hover {
+  text-decoration: none;
+}

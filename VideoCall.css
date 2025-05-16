@@ -1,0 +1,117 @@
+.video-call-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  margin-left: 250px; /* sidebar expanded width */
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.collapsed {
+  margin-left: 80px; /* sidebar collapsed width */
+}
+
+.notifications {
+  margin-bottom: 15px;
+}
+
+.notification {
+  background: #e0f7fa;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.appointment-request select {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.appointments-list ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.appointments-list li {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.appointment.pending {
+  background-color: #fff8e1;
+}
+
+.appointment.accepted {
+  background-color: #e8f5e9;
+}
+
+.appointment.rejected {
+  background-color: #ffebee;
+}
+
+.online-status {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.online {
+  color: green;
+  font-weight: 700;
+}
+
+.offline {
+  color: red;
+  font-weight: 700;
+}
+
+.incoming-call {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #ffecb3;
+  border-radius: 6px;
+}
+
+.call-controls {
+  margin-top: 20px;
+}
+
+.video-section {
+  display: flex;
+  gap: 10px;
+}
+
+.video-box {
+  width: 300px;
+  height: 225px;
+  background: black;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.video-box.disabled {
+  background: #555;
+}
+
+.controls button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.simulate-call-btn {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #29b6f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

@@ -1,11 +1,11 @@
+
 // src/components/pages/Report.jsx
 import React, { useState } from "react";
 import { FaDownload } from "react-icons/fa";
 import "./FacultyDashboard.css";  // reuse existing styles
-import "./Report.css";            // new report‐specific styles
+import "./Report.css";            // new report-specific styles
 import FacultySidebar from "./FacultySidebar";
 import { Link } from "react-router-dom";
-
 
 function Modal({ children, onClose }) {
   return (
@@ -20,13 +20,8 @@ function Modal({ children, onClose }) {
 
 const Report = () => {
   // ───────── Sidebar / Header State ─────────
-  const [isCollapsed, setIsCollapsed]       = useState(false);
-  //const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  //const [showPopup, setShowPopup]           = useState(false);
-  const [statisticsModalVisible, setStatisticsModalVisible] = useState(false);
-
-  const toggleSidebar  = () => setIsCollapsed(!isCollapsed);
-  //const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const toggleSidebar = () => setIsCollapsed(!isCollapsed);
 
   // ───────── Reports Data & State ─────────
   const reports = [
@@ -47,18 +42,29 @@ const Report = () => {
     count: reports.filter(r => r.status === status).length
   }));
 
-  // for editable status dropdown per record
+  // ─── per-report status + comment state ───
   const [studentStatuses, setStudentStatuses] = useState(
     () => reports.reduce((acc, r) => ({ ...acc, [r.id]: r.status }), {})
   );
+  const [studentComments, setStudentComments] = useState({});
+  const [commentingForId, setCommentingForId] = useState(null);
+  const [commentInput,    setCommentInput]    = useState("");
+  const commentModalVisible = commentingForId !== null;
+
+  // enhanced handler: if flagged/rejected, pop up the comment box
   const handleStatusChange = (id, newStatus) => {
     setStudentStatuses(prev => ({ ...prev, [id]: newStatus }));
+    if (newStatus === "flagged" || newStatus === "rejected") {
+      setCommentInput(studentComments[id] || "");
+      setCommentingForId(id);
+    }
   };
 
-  // filters
+  // ───────── Filters & Actions ─────────
   const [reportMajorFilter,  setReportMajorFilter ]  = useState("");
   const [reportStatusFilter, setReportStatusFilter] = useState("");
   const [filteredReports,    setFilteredReports]    = useState(reports);
+
   const applyReportFilter = () => {
     setFilteredReports(
       reports.filter(r =>
@@ -68,7 +74,8 @@ const Report = () => {
     );
   };
 
-  // show stats modal
+  // ───────── Statistics Modal ─────────
+  const [statisticsModalVisible, setStatisticsModalVisible] = useState(false);
   const generateStatisticsReport = () => setStatisticsModalVisible(true);
   const generateStatistics = () => {
     alert(
@@ -80,13 +87,14 @@ const Report = () => {
     );
   };
 
-  // detail modals
+  // ───────── Detail Modals ─────────
   const [reportModalVisible,    setReportModalVisible]    = useState(false);
   const [reportModalData,       setReportModalData]       = useState(null);
   const openReportModal = r => {
     setReportModalData(r);
     setReportModalVisible(true);
   };
+
   const [evaluationModalVisible, setEvaluationModalVisible] = useState(false);
   const [evaluationModalData,    setEvaluationModalData]    = useState(null);
   const openEvaluationModal = r => {
@@ -115,10 +123,9 @@ const Report = () => {
       {/* Header */}
       <div className="bg-header">
         <div className="header-content">
-          <button
-            className="sidebar-toggle"
-            onClick={toggleSidebar}
-          >☰</button>
+          <button className="sidebar-toggle" onClick={toggleSidebar}>
+            ☰
+          </button>
         </div>
       </div>
 
@@ -137,22 +144,23 @@ const Report = () => {
             onChange={e => setReportStatusFilter(e.target.value)}
           >
             <option value="">All Statuses</option>
-            {statusesList.map(s => <option key={s}>{s.charAt(0).toUpperCase()+s.slice(1)}</option>)}
+            {statusesList.map(s => (
+              <option key={s}>{s.charAt(0).toUpperCase() + s.slice(1)}</option>
+            ))}
           </select>
           <button className="filter-btn" onClick={applyReportFilter}>
             Filter
           </button>
           <button className="filter-btn" onClick={generateStatisticsReport}>
-             Statistics Report
+            Statistics Report
           </button>
           <Link
-  to="/faculty-dashboard"
-  className="filter-btn"
-  onClick={generateStatistics}
->
-  Generate Statistics
-</Link>
-
+            to="/faculty-dashboard"
+            className="filter-btn"
+            onClick={generateStatistics}
+          >
+            Generate Statistics
+          </Link>
         </div>
 
         {/* Report Cards */}
@@ -162,28 +170,35 @@ const Report = () => {
               <h3>{r.name}</h3>
               <p>ID: {r.id}</p>
               <p>Major: {r.major}</p>
-              <label>
-                <strong>Status:</strong>{" "}
-                <select
-                  value={studentStatuses[r.id]}
-                  onChange={e => handleStatusChange(r.id, e.target.value)}
-                >
-                  {statusesList.map(s => (
-                    <option key={s} value={s}>
-                      {s.charAt(0).toUpperCase() + s.slice(1)}
-                    </option>
-                  ))}
-                </select>
-              </label>
+
+              <div className="status-line">
+  <label className="status-label">
+    <strong>Status:</strong>{" "}
+    <select
+      value={studentStatuses[r.id]}
+      onChange={e => handleStatusChange(r.id, e.target.value)}
+    >
+      {statusesList.map(s => (
+        <option key={s} value={s}>
+          {s.charAt(0).toUpperCase() + s.slice(1)}
+        </option>
+      ))}
+    </select>
+  </label>
+
+  {studentComments[r.id] && (
+    <span className="report-comment-inline">
+      <strong>Clarification:</strong> {studentComments[r.id]}
+    </span>
+  )}
+</div>
+
 
               <div className="card-actions">
                 <a href={r.fileUrl} download className="download-btn">
                   <FaDownload />
                 </a>
-                <button
-                  className="view-btn"
-                  onClick={() => openReportModal(r)}
-                >
+                <button className="view-btn" onClick={() => openReportModal(r)}>
                   View Internship Report
                 </button>
                 <button
@@ -195,7 +210,10 @@ const Report = () => {
               </div>
             </div>
           ))}
-          {filteredReports.length === 0 && <p>No reports match your filters.</p>}
+
+          {filteredReports.length === 0 && (
+            <p>No reports match your filters.</p>
+          )}
         </div>
       </div>
 
@@ -233,7 +251,7 @@ const Report = () => {
               <ul>
                 {statusData.map(d => (
                   <li key={d.name}>
-                    {d.name.charAt(0).toUpperCase()+d.name.slice(1)}: {d.count}
+                    {d.name.charAt(0).toUpperCase() + d.name.slice(1)}: {d.count}
                   </li>
                 ))}
               </ul>
@@ -245,6 +263,48 @@ const Report = () => {
               onClick={() => setStatisticsModalVisible(false)}
             >
               Close
+            </button>
+          </div>
+        </Modal>
+      )}
+
+      {/* Clarification Comment Modal */}
+      {commentModalVisible && (
+        <Modal onClose={() => setCommentingForId(null)}>
+          <h3>
+            Why is <strong>
+              {reports.find(r => r.id === commentingForId)?.name}
+            </strong> {studentStatuses[commentingForId]}?
+          </h3>
+
+          <textarea
+            value={commentInput}
+            onChange={e => setCommentInput(e.target.value)}
+            placeholder="Enter your clarification…"
+            rows={4}
+            style={{ width: "100%", marginBottom: 12 }}
+          />
+
+          <div style={{
+            textAlign: "right",
+            display: "flex",
+            gap: 8,
+            justifyContent: "flex-end"
+          }}>
+            <button onClick={() => setCommentingForId(null)}>
+              Cancel
+            </button>
+            <button
+              onClick={() => {
+                setStudentComments(prev => ({
+                  ...prev,
+                  [commentingForId]: commentInput.trim()
+                }));
+                setCommentingForId(null);
+              }}
+              disabled={!commentInput.trim()}
+            >
+              Submit
             </button>
           </div>
         </Modal>

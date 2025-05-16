@@ -1,147 +1,233 @@
-/* Wrapper for the full dashboard view */
+/* 🌟 Wrapper for the full dashboard view */
 .student-dashboard-wrapper {
-    display: flex;
-    width: 100%;
-    height: 200vh;
-    background-color: #f6eef0;
-    position: relative;
-  }
+  display: flex;
+  width: 100%;
+  height: 200vh;
   
-  /* Full-width background styling */
-  .student-dashboard-bg {
-    position: absolute;
-    width: 100vw; /* Full viewport width */
-    height: 184px;
-    left: 0;
-    top: 73px;
-    background: #C8B4D0;
-    z-index: 0; /* Behind all other content */
-    border-radius: 0px 0px 20px 20px;
-  }
-
-  
-  /* Main content area for the student dashboard */
-  .student-dashboard-content {
-    padding: 24px;
-    flex: 1;
-    overflow-y: auto;
-    color: #4c3d40;
-    position: relative;
-    transition: margin-left 0.3s ease;
-  }
-  
-  .student-dashboard-content.expanded {
-    margin-left: -192px; /* 256px (full) - 64px (collapsed) */
-  }
-  
-  /* Profile icon styling */
-  .profile-icon {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    cursor: pointer;
-  }
-  .profile-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    
-  }
-  
-  /* Profile name styling */
-  .profile-name {
-    background-color: #4c3d40;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-size: 14px;
-  }
-  /* Profile box styling */
-.profile-box {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    padding: 6px 12px;
-    border: 1px solid #4C3D40;
-    border-radius: 20px;
-    background-color: transparent;
-    color: #4C3D40;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  .profile-box:hover {
-    background-color: rgba(76, 61, 64, 0.1); /* Light hover effect */
-  }
-  
-  /* Profile name */
-  .profile-name {
-    font-size: 14px;
-  }
-  
-  /* Dropdown menu styling */
-  .dropdown-menu {
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background-color: white;
-    border: 1px solid #4C3D40;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    min-width: 120px;
-    z-index: 10;
-  }
-  
-  .dropdown-item {
-    padding: 8px 12px;
-    cursor: pointer;
-    color: #4C3D40;
-    background-color: white;
-    transition: background-color 0.2s ease;
-  }
-  
-  .dropdown-item:hover {
-    background-color: #f6eef0;
-  }
-.projects-ui-card h3,
-.projects-ui-card p {
-  color: #4C3D40; /* coffee pot text color */
-  margin: 0;
-  font-family: 'Inter', sans-serif;
+  background-color: #f6eef0;
+  position: relative;
 }
+
+/* 🌟 Full-width background styling */
+.student-dashboard-bg {
+  position: absolute;
+  width: 100vw;
+  height: 184px;
+  left: 0;
+  top: 73px;
+  background: #C8B4D0;
+  z-index: 0;
+  border-radius: 0px 0px 20px 20px;
+}
+
+/* 🌟 Main content area for the student dashboard */
+.student-dashboard-content {
+  padding: 24px;
+  flex: 1;
+  overflow-y: auto;
+  color: #4c3d40;
+  position: relative;
+  transition: margin-left 0.3s ease;
+  z-index: 0;
+}
+
+.student-dashboard-content.expanded {
+  margin-left: -192px;
+}
+
+/* 🌟 Profile box styling */
+.profile-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  padding: 6px 12px;
+  border: 1px solid #4C3D40;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #4C3D40;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  z-index: 2;
+}
+
+.profile-box:hover {
+  background-color: rgba(76, 61, 64, 0.1);
+}
+
+.profile-name {
+  font-size: 14px;
+}
+
+/* 🌟 Card Styling */
 .projects-ui-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
-  padding: 24px;
-  gap: 24px;
-
+  padding: 20px;
+  gap: 10px;
+  width: 220px;
+  height: 150px;
+  background: #F6EEF0;
+  border-radius: 12px;
   position: absolute;
-  width: 190px;
-  height: 157px;
-
-  background: #F6EEF0; /* updated background color */
-
-  /* Box shadow for elevation */
-  box-shadow: 0px 2px 4px rgba(13, 23, 33, 0.08), 
-              0px 1px 2px rgba(21, 30, 40, 0.08);
-
-  border-radius: 8px;
-  z-index: 5;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  z-index: 2;
+  text-align: left;
 }
 
-.projects-ui-card h3,
-.projects-ui-card p {
-  color: #4C3D40; /* coffee pot text color */
+/* 🌟 Hover Effect */
+.projects-ui-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 🌟 Title and description styling */
+.projects-ui-card h3 {
+  font-size: 18px;
+  color: #4C3D40;
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-weight: bold;
 }
 
+.projects-ui-card p {
+  font-size: 14px;
+  color: #4C3D40;
+  margin: 0;
+  font-style: italic;
+}
+
+/* 🌟 Layout Styling for Cards (Positions exactly as you specified) */
+.dashboard-cards {
+  position: relative;
+  margin-top: 90px;
+  margin-left: 300px;
+}
+
+.card1 {
+  top: 10px;
+  left: 100px;
+}
+
+.card2 {
+  top: 10px;
+  left: 450px;
+}
+
+.card3 {
+  top: 10px;
+  left: 800px;
+}
+/* Profile box styling */
+.profile-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  padding: 6px 12px;
+  border: 1px solid #4C3D40;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #4C3D40;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.profile-box:hover {
+  background-color: rgba(76, 61, 64, 0.1); /* Light hover effect */
+}
+
+/* Profile name */
+.profile-name {
+  font-size: 14px;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #4C3D40;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  min-width: 120px;
+  z-index: 10;
+}
+
+.dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #4C3D40;
+  background-color: white;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f6eef0;
+}
+/* Suggested Companies Section */
+.suggested-companies {
+  margin-top: 300px;
+  padding: 20px;
+  background-color: #f6eef0;
+  border-radius: 12px;
+  margin-left: 250px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.suggested-companies h2 {
+  margin-bottom: 12px;
+  color: #4C3D40;
+  font-size: 22px;
+}
+
+.suggested-companies p {
+  margin-bottom: 16px;
+  color: #4C3D40;
+  font-size: 16px;
+}
+
+.company-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.company-item {
+  background-color: #e3d0e8;
+  margin-bottom: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #4C3D40;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.company-item:hover {
+  background-color: #d3c3e2;
+  cursor: pointer;
+}
+/* Welcome Message */
+.welcome-message {
+  text-align: left;
+  color: #4C3D40;
+  font-family: 'Inter', sans-serif;
+  transform: translate(-200px, 60px); /* ← left, ↑ up */
+}
+
+.welcome-message h2 {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.welcome-message p {
+  font-size: 16px;
+  color: #6e5b60;
+}
