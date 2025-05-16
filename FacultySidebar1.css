@@ -1,54 +1,282 @@
-/* FacultySidebar1.css */
-
-/* Background color applied only to the Faculty Dashboard */
-.faculty-dashboard-wrapper {
-  background-color: #F6EEF0; /* Light pink background color */
-  width: 100%;  /* Ensure it covers the full width */
-  height: 100vh; /* Full height of the viewport */
+/* =============================
+   General Sidebar Styling
+============================= */
+.sidebar-dark {
+  display: flex;
+  flex-direction: column;
+  height: 300vh;
+  background: #4c3d40;
+  position: absolute;
+  left: 0;
+  width: 256px;
+  transition: width 0.3s ease, left 0.3s ease;
+  z-index: 5;
 }
 
+.sidebar-dark.collapsed {
+  width: 64px;
+}
+
+/* =============================
+   Sidebar Title
+============================= */
+.sidebar-title-container {
+  margin: 20px 0 10px 24px;
+}
+
+.sidebar-title {
+  color: #f6eef0;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* =============================
+   Sidebar Toggle Button
+============================= */
+.sidebar-toggle {
+  position: absolute;
+  top: 20px;
+  right: -3px;
+  background-color: transparent;
+  color: #f6eef0;
+  border-radius: 0; /* No circle, just the icon */
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: right 0.3s ease;
+}
+
+/* =============================
+   Sidebar Menu
+============================= */
+.sidebar-content {
+  margin-top: 20px;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  position: relative;
+}
+
+.sidebar-menu li.active {
+  background-color: #3b2f31;
+}
+
+.sidebar-menu li:hover {
+  background-color: #3b2f31;
+  cursor: pointer;
+}
+
+.sidebar-menu li a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  width: 100%;
+}
+
+.sidebar-menu li a span {
+  margin-left: 8px;
+}
+
+/* =============================
+   Tooltip for Collapsed Sidebar
+============================= */
+.sidebar-dark.collapsed li {
+  justify-content: center;
+}
+
+.sidebar-dark.collapsed li[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  left: 70px;
+  background-color: #4c3d40;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* =============================
+   Icon Styling
+============================= */
+.sidebar-menu li a svg {
+  color: white;
+}
+FacultySidebar1.css
+
+
 /* Sidebar styles */
-.sidebar-dark {
+.faculty-sidebar .sidebar-dark {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 24px;
-  gap: 16px;
-
-  position: absolute;
-  width: 256px;
-  height: 1641px;
-  left: 0px;
-  top: 0px;
-
-  background: #4C3D40; /* Gray/800 */
-}
-
-/* Background styling for the sidebar */
-.sidebar-bg {
-  position: absolute;
-  width: 1144px;
-  height: 191px;
-  left: 304px;  /* Adjusted from 256px to 300px */
-  top: 66px;    /* Top remains the same */
-  background: #C8B4D0;  /* Updated background color */
-}
-
-/* Title container inside the sidebar */
-.sidebar-title-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  /* tighten up the space between every child (title + links) */
   gap: 4px;
-  padding: 0px;
-  width: 100%; /* Make it span the full width */
-  height: 31px; /* Adjust height of the title container */
+
+  background: #4c3d40;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 256px;
+  height: 120vh;         /* keep your full-page height */
+  transition: left 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+  z-index: 9999;
 }
 
-/* Sidebar title */
-.sidebar-title {
-  color: white; /* White text color */
-  font-size: 18px; /* Font size for the title */
-  font-weight: bold; /* Make the title bold */
-  margin: 0; /* Remove margin */
+.faculty-sidebar .sidebar-dark.collapsed {
+  left: -192px;
+  opacity: 1;
+  overflow: hidden;
+}
+
+/* Sidebar toggle button (chevron icon) */
+.faculty-sidebar .sidebar-toggle {
+  position: absolute;
+  top: 20px;
+  right: -3px;
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  cursor: pointer;
+  z-index: 10;
+  transition: right 0.3s ease;
+  color: #F6EEF0;
+}
+
+/* Title container – if you’ve wrapped title in its own div */
+.faculty-sidebar .sidebar-title-container {
+  margin-bottom: 170px;
+}
+/* Title itself */
+.faculty-sidebar .sidebar-title {
+  color: #F6EEF0;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  /* no extra bottom margin needed here */
+}
+
+/* Reset list bullets & spacing */
+.faculty-sidebar .sidebar-content ul,
+.faculty-sidebar .sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.faculty-sidebar .sidebar-content li,
+.faculty-sidebar .sidebar-menu li {
+  list-style: none;
+}
+
+/* Remove large top-margin on the list wrapper */
+.faculty-sidebar .sidebar-content {
+  margin-top: 170px;      /* was 100px; now zeroed out */
+}
+
+/* Basic link styling */
+.faculty-sidebar .sidebar-link {
+  color: #F6EEF0;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  gap: 6px;
+  margin: 0;           /* ensure no stray margins */
+}
+
+.faculty-sidebar .sidebar-link:hover {
+  opacity: 0.8;
+}
+
+/* Internship-specific link */
+.internship-link {
+  color: #F6EEF0;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  margin-top: 4px;     /* was 12px; now only 4px from previous item */
+}
+
+.internship-link:hover,
+.internship-link.active {
+  background-color: #3b2f31;
+  color: #ffffff;
+}
+
+/* Icon & label helpers */
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  margin-right: 8px;
+}
+
+.label-text {
+  white-space: nowrap;
+}
+
+.profile-link {
+  margin-top: 6px !important;
+}
+
+/* Collapsed-mode tweaks */
+.faculty-sidebar .sidebar-icon {
+  min-width: 20px;
+  font-size: 18px;
+}
+
+.faculty-sidebar .sidebar-label {
+  margin-left: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.hide-label {
+  display: none;
+}
+/* make the buttons pill-shaped */
+.filter-btn {
+  border-radius: 20px;    /* instead of 6px */
+}
+
+/* match the dropdown menu’s corners */
+.filter-menu {
+  border-radius: 20px;    /* instead of 6px */
+}
+/* Make just the filter buttons and their menus round */
+.filter-container .filter-btn {
+  border-radius: 20px !important;
+}
+
+.filter-container .filter-menu {
+  border-radius: 20px !important;
 }

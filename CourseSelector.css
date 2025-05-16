@@ -1,0 +1,20 @@
+/* CourseSelector.css */
+.course-selector {
+    margin-top: 10px;
+  }
+  
+  .course-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .course-item {
+    background-color: #e9ecef;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
