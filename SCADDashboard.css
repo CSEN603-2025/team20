@@ -4,33 +4,33 @@
   height: 100vh;
   background: #F6EEF0;
 }
-.sidebar-dark {
+.scad-sidebar-dark {
   width: 256px;
   background: #4C3D40;
   position: relative;
   transition: width 0.3s ease;
   box-sizing: border-box;
 }
-.scad-wrapper.collapsed .sidebar-dark {
+.scad-wrapper.collapsed .scad-sidebar-dark {
   width: 64px;
 }
 
 /* Title + Toggle */
-.sidebar-title-container {
+.scad-sidebar-title-container {
   display: flex;
   align-items: center;
   padding: 24px 16px;
 }
-.sidebar-title {
+.scad-sidebar-title {
   margin: 0;
   font-size: 18px;
   font-weight: bold;
   color: #BDB5C0;
 }
-.scad-wrapper.collapsed .sidebar-title {
+.scad-wrapper.collapsed .scad-sidebar-title {
   display: none;
 }
-.toggle-btn {
+.scad-toggle-btn {
   background: none;
   border: none;
   margin-left: auto;
@@ -38,7 +38,7 @@
   height: 24px;
   cursor: pointer;
 }
-.toggle-btn::before {
+scad-toggle-btn::before {
   content: "";
   display: block;
   width: 8px;
@@ -48,12 +48,12 @@
   transform: rotate(225deg);
   transition: transform 0.3s ease;
 }
-.sidebar-dark.collapsed .toggle-btn::before {
+.scad-sidebar-dark.collapsed .scad-toggle-btn::before {
   transform: rotate(45deg);
 }
 
 /* Sidebar Items */
-.sidebar-item {
+.scad-sidebar-item {
   display: flex;
   align-items: center;
   padding: 12px 16px;
@@ -64,34 +64,34 @@
   cursor: pointer;
   transition: color 0.2s, background-color 0.2s;
 }
-.sidebar-item svg {
+.scad-sidebar-item svg {
   margin-right: 10px;
 }
-.scad-wrapper.collapsed .sidebar-item {
+.scad-wrapper.collapsed .scad-sidebar-item {
   justify-content: center;
   padding: 12px;
 }
-.scad-wrapper.collapsed .sidebar-item span {
+.scad-wrapper.collapsed .scad-sidebar-item span {
   display: none;
 }
-.sidebar-item:hover {
+.scad-sidebar-item:hover {
   color: #ddd;
   background-color: #5a4a4d;
 }
-.sidebar-item.active {
+.scad-sidebar-item.active {
   background-color: #6c5b56;
   color: #fff;
 }
 
 /* === MAIN & TOP BAR === */
-.main-content {
+.scad-main-content {
   flex: 1;
   position: relative;
   overflow-y: auto;
   padding-top: 191px;
   box-sizing: border-box;
 }
-.top-bar {
+.scad-top-bar {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 191px;
@@ -101,7 +101,7 @@
   padding: 0 24px 16px;
   justify-content: space-between;
 }
-.dashboard-title {
+.scad-dashboard-title {
   margin: 0; color: #fff;
   font-size: 1.75rem; font-weight: 600;
 }
@@ -127,8 +127,8 @@
 }
 
 /* === CONTENT AREA === */
-.dashboard-content { padding: 24px; }
-.content-container { max-width: 800px; margin: 0 auto; }
+.scad-dashboard-content { padding: 24px; }
+.scad-content-container { max-width: 800px; margin: 0 auto; }
 
 /* Project Cards (New Boxes for Dashboard) */
 .project-card {
@@ -157,26 +157,26 @@
 .project-card-3 { left: 880px; } /* 613 + 251 + 16 */
 
 /* === NARROW CARDS WRAPPER === */
-.narrow-cards { max-width: 600px; margin: 0 auto; }
+.scad-narrow-cards { max-width: 600px; margin: 0 auto; }
 
 /* === SEARCH & FILTER === */
 .search-container { position: relative; }
-.search-wrapper {
+.scad-search-wrapper {
   display: flex; align-items: center; gap: 8px;
   margin-bottom: 16px;
 }
-.search-input {
+.scad-search-input {
   flex: 1; padding: 8px 12px;
   border: 1px solid #ccc; border-radius: 4px;
 }
-.filter-btn {
+.scad-filter-btn {
   padding: 6px 10px; background: #4C3D40; color: #fff;
   border: none; border-radius: 4px; cursor: pointer;
 }
-.filter-btn:hover { background: #6c5b56; }
+.scad-filter-btn:hover { background: #6c5b56; }
 
 /* === DROPDOWN FACETS === */
-.facet-dropdown {
+.scad-facet-dropdown {
   position: fixed;
   top: 40%;
   left: 60%;
@@ -191,66 +191,66 @@
   border-radius: 4px;
   padding: 1rem;
 }
-.toggle-all { background: none; border: none; color: #0066cc; cursor: pointer; margin-bottom: 8px; }
-.facet-group { margin-bottom: 12px; }
-.facet-label { display: block; margin-bottom: 4px; font-weight: 500; }
-.facet-options { display: flex; flex-wrap: wrap; gap: 8px; }
-.facet-option { display: flex; align-items: center; }
-.facet-option input { margin-right: 4px; }
+.scad-toggle-all { background: none; border: none; color: #0066cc; cursor: pointer; margin-bottom: 8px; }
+.scad-facet-group { margin-bottom: 12px; }
+.scad-facet-label { display: block; margin-bottom: 4px; font-weight: 500; }
+.scad-facet-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.scad-facet-option { display: flex; align-items: center; }
+.scad-facet-option input { margin-right: 4px; }
 
-.card-select option:first-child {
+.scad-card-select option:first-child {
   color: #444;
 }
 
 /* === CARDS === */
-.cards-panel { padding-top: 16px; }
-.cards-list { display: flex; flex-direction: column; gap: 16px; }
-.card {
+.scad-cards-panel { padding-top: 16px; }
+.scad-cards-list { display: flex; flex-direction: column; gap: 16px; }
+.scad-card {
   background: #fff; padding: 16px; border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.08);
   display: flex; flex-direction: column; gap: 8px;
 }
-.card-actions {
+.scad-card-actions {
   display: flex; gap: 8px; margin-top: 8px;
 }
-.card h3 { margin: 0; font-size: 1.2rem; }
-.card p { margin: 0; color: #444; }
-.card-select,
-.view-btn {
+.scad-card h3 { margin: 0; font-size: 1.2rem; }
+.scad-card p { margin: 0; color: #444; }
+.scad-card-select,
+.scad-view-btn {
   background: #4C3D40; color: #fff;
   border: none; border-radius: 4px;
   padding: 6px 10px; cursor: pointer;
 }
-.card-select:hover,
-.view-btn:hover { background: #6c5b56; }
+.scad-card-select:hover,
+.scad-view-btn:hover { background: #6c5b56; }
 
 /* === DOWNLOAD LINK === */
-.download-btn {
+.scad-download-btn {
   background: #4C3D40; color: #F6EEF0;
   padding: 6px 10px; border-radius: 4px;
   text-decoration: none; align-self: flex-end;
   display: inline-block;
 }
-.download-btn:hover { background: #6c5b56; }
+.scad-download-btn:hover { background: #6c5b56; }
 
 /* === MODAL === */
-.modal-overlay {
+.scad-modal-overlay {
   position: fixed; top:0; left:0; right:0; bottom:0;
   background: rgba(0,0,0,0.4);
   display: flex; align-items: center; justify-content: center;
   z-index: 100;
 }
-.modal-content {
+.scad-modal-content {
   background: #fff; padding: 24px; border-radius: 8px;
   max-width: 400px; width: 90%; position: relative;
 }
-.modal-close {
+.scad-modal-close {
   position: absolute; top: 8px; right: 8px;
   background: none; border: none; font-size: 1.25rem;
   cursor: pointer;
 }
 
-.view-btn {
+.scad-view-btn {
   background: #4C3D40;
   color: #fff;
   border: none;
@@ -258,57 +258,57 @@
   padding: 6px 10px;
   cursor: pointer;
 }
-.view-btn:hover {
+.scad-view-btn:hover {
   background: #6c5b56;
 }
 
 /* Notifications modal scrollable list */
-.modal-content ul.notifications-list {
+.scad-modal-content ul.scad-notifications-list {
   list-style: none;
   padding: 0;
   max-height: 60vh;
   overflow-y: auto;
 }
-.modal-content ul.notifications-list li {
+.scad-modal-content ul.scad-notifications-list li {
   margin-bottom: 12px;
 }
-.modal-content ul.notifications-list li p {
+.scad-modal-content ul.scad-notifications-list li p {
   margin: 0;
 }
-.modal-content ul.notifications-list li small {
+.scad-modal-content ul.scad-notifications-list li small {
   color: #666;
 }
 
 /* ─── In-Call Controls ─── */
-.modal-content .call-controls {
+.scad-modal-content .scad-call-controls {
   display: flex;
   justify-content: center;
   gap: 12px;
   margin-top: 16px;
 }
-.modal-content .call-controls button {
+.scad-modal-content .scad-call-controls button {
   padding: 6px 12px;
   border-radius: 4px;
   border: none;
   cursor: pointer;
 }
-.modal-content .call-controls button:hover {
+.scad-modal-content .scad-call-controls button:hover {
   background: #6c5b56;
   color: #fff;
 }
 
 /* Accept buttons → green, Decline/End → red */
-.modal-content .filter-btn.accept,
-.modal-content .call-controls button:not(.decline) {
+.scad-modal-content .scad-filter-btn.accept,
+.scad-modal-content .scad-call-controls button:not(.decline) {
   background: #28a745;
   color: white;
 }
-.modal-content .filter-btn.decline,
-.modal-content .call-controls .decline {
+.scad-modal-content .scad-filter-btn.decline,
+.scad-modal-content .scad-call-controls .decline {
   background: #dc3545;
   color: white;
 }
-.call-controls button {
+.scad-call-controls button {
   padding: 6px 12px;
   border-radius: 4px;
   border: none;
@@ -316,14 +316,14 @@
 }
 
 /* ─── Video Toggle Icons ─── */
-.call-controls {
+.scad-call-controls {
   position: relative;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   padding: 1rem;
 }
-.icon-btn {
+.scad-icon-btn {
   background: none;
   border: none;
   padding: 0.25rem;
@@ -331,10 +331,10 @@
   cursor: pointer;
   color: inherit;
 }
-.icon-btn.decline {
+.scad-icon-btn.decline {
   color: #dc3545;
 }
-.icon-btn:hover {
+.scad-icon-btn:hover {
   opacity: 0.8;
 }
 
