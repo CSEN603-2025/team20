@@ -1,0 +1,84 @@
+.profile-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #4C3D40;
+    border-radius: 10px;
+    background-color: #F6EEF0;
+  }
+  
+  h2, h3 {
+    color: #4C3D40;
+  }
+  
+  .profile-section {
+    margin-bottom: 20px;
+  }
+  
+  p, input, textarea {
+    margin: 5px 0;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #4C3D40;
+    border-radius: 5px;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  button {
+    background-color: #4C3D40;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3B2D32;
+  }
+  
+  .internship {
+    margin: 10px 0;
+    padding: 8px;
+    background-color: #EADBE2;
+    border-radius: 5px;
+  }
+  .profile-page-wrapper {
+    padding: 20px;
+    background-color: #f6eef0;
+  }
+  
+  .go-back-button {
+    padding: 10px 20px;
+    background-color: #4C3D40;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .go-back-button:hover {
+    background-color: #3a2f2d; /* Darken the background color on hover */
+  }
+  
+  .profile-info {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-info h2 {
+    font-size: 24px;
+    color: #4C3D40;
+  }
+  
