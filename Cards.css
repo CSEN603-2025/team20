@@ -1,0 +1,157 @@
+/* Container for cards inside main content */
+.internships-list {
+  max-width: 640px;
+  margin: 0 auto;      /* centers horizontally */
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 0;
+}
+
+/* Individual internship card */
+.internship-card {
+  /* Remove or comment out any fixed height */
+  /* height: 157px; */
+  min-height: 157px; /* Optional: set a minimum height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 6px; /* Decrease the gap between elements */
+  position: relative;
+  width: 800px;
+  box-sizing: border-box;
+  /* Add overflow if you expect a lot of content */
+  /* overflow-y: auto; */
+  max-width: 640px;       /* limit max width for better readability */
+  background-color: #fff;
+  border-radius: 5px;
+  color: #4c3d40;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
+  transition: box-shadow 0.3s ease;
+  margin: 10px auto;      /* vertical margin + horizontally centered */
+}
+
+.internship-card p,
+.internship-card h3 {
+  margin-bottom: 6px; /* Decrease space below each field */
+  margin-top: 0;
+}
+
+.internship-card h3 {
+  margin-bottom: 10px; /* Slightly more space below the title */
+}
+
+.internship-card:hover {
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+/* Buttons inside internship cards */
+.internship-card button {
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #4c3d40;
+  color: #fff;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.internship-card button:hover {
+  background-color: #3b2f31;
+  color: #fff;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: #fff;
+  padding: 24px 30px;
+  border-radius: 10px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+/* Modal title */
+.modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #4c3d40;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* Modal description or list */
+.modal-content p,
+.modal-content ul {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.modal-content ul li {
+  margin-bottom: 8px;
+}
+
+/* Close button inside modal */
+.modal-content button {
+  margin-top: 20px;
+  padding: 8px 20px;
+  border-radius: 5px;
+  border: 1.5px solid #4c3d40;
+  background-color:#4c3d40;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #4c3d40;
+  color: #fff;
+}
+.button-group {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn {
+  background-color: #4c3d40;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 100px;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #3b2f31; /* slightly darker on hover */
+}
+

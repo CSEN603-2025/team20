@@ -1,0 +1,126 @@
+/* Header background bar */
+.bg-header {
+    position: absolute;
+    width: 100%;
+    height: 191px;
+    top: 66px;
+    left: 0;
+    background: #C8B4D0;
+    z-index: 1;
+  
+    /* optional flex layout for any header content */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+  .profile-icon {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+  }
+  .profile-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    
+  }
+  
+  /* Profile name styling */
+  .profile-name {
+    background-color: #4c3d40;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+  /* Profile box styling */
+  .profile-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  top: 20px;              /* changed from -150px */
+  right: 43px;
+  padding: 6px 12px;
+  border: 1px solid #4C3D40;
+  border-radius: 20px;
+  background-color: white;  /* for visibility */
+  color: #4C3D40;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  z-index: 10;
+}
+
+  .profile-box:hover {
+    background-color: rgba(76, 61, 64, 0.1); /* Light hover effect */
+  }
+  
+  /* Profile name */
+  .profile-name {
+    font-size: 14px;
+  }
+  
+  /* Dropdown menu styling */
+  .dropdown-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #4C3D40;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-width: 120px;
+    z-index: 10;
+  }
+  
+  .dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #4C3D40;
+    background-color: white;
+    transition: background-color 0.2s ease;
+    display: block;      /* Ensures the whole line is clickable/highlighted */
+    width: 100%;         /* Fills the dropdown menu width */
+    box-sizing: border-box;
+  }
+  
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background-color: #F6EEF0;
+    color: #4C3D40;
+  }
+
+  .projects-ui-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 24px;
+  
+    position: absolute;
+    width: 190px;
+    height: 157px;
+  
+    background: #F6EEF0; /* updated background color */
+  
+    /* Box shadow for elevation */
+    box-shadow: 0px 2px 4px rgba(13, 23, 33, 0.08), 
+                0px 1px 2px rgba(21, 30, 40, 0.08);
+  
+    border-radius: 8px;
+    z-index: 5;
+  }
+  
+  .projects-ui-card h3,
+  .projects-ui-card p {
+    color: #4C3D40; /* coffee pot text color */
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+  }

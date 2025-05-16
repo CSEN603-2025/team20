@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./AvailableInternships.css";
-import FacultySidebar from "./FacultySidebar";
+import CSidebar from "./CSidebar";
 import { FaSearch } from "react-icons/fa";
+import { Search } from "lucide-react";
 
 const AvailableInternships = () => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -45,10 +46,12 @@ const AvailableInternships = () => {
 
   return (
     <div className="internships-page-wrapper">
-      <FacultySidebar isCollapsed={isSidebarCollapsed} toggleSidebar={toggleSidebar} />
+      <CSidebar isCollapsed={isSidebarCollapsed} toggleSidebar={toggleSidebar} />
 
       <div className={`available-internships-container ${isSidebarCollapsed ? "collapsed" : ""}`}>
-        <h2>Available Internships in SCAD</h2>
+        <h2 style={{ textAlign: "center", margin: "24px 0", fontWeight: 700 }}>
+          Available Internships in SCAD
+        </h2>
 
         {/* 🔎 Search Bar */}
         <div className="search-bar">
@@ -58,9 +61,9 @@ const AvailableInternships = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <button>
-            <FaSearch />
-          </button>
+          <span style={{ marginLeft: "8px", color: "#888", fontSize: "1.2rem", display: "flex", alignItems: "center" }}>
+            <Search size={20} />
+          </span>
         </div>
 {/* 🔄 Filters */}
 <div className="filters">
