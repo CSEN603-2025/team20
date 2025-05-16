@@ -1,119 +1,292 @@
-/* Header background bar */
-.bg-header {
-    position: absolute;
-    width: 100%;
-    height: 191px;
-    top: 66px;
-    left: 0;
-    background: #C8B4D0;
-    z-index: 1;
+
+/* Container wrapper */
+.company22-company-dashboard-wrapper.scad-wrapper {
+  display: flex;
+  height: 130vh;
+  width: 100vw;
+}
+
+/* Main content area */
+.company22-main-content { flex: 1; display: flex; flex-direction: column; position: relative; }
+
+/* Push dashboard content below header */
+.company22-dashboard-content { padding-top: 191px; flex: 1; }
+
+/* Header bar */
+.company22-bg-header {
+  width: 100%; height: 191px; background: #C8B4D0;
+  display:flex; align-items:center; justify-content:space-between; padding:0 40px;
+}
+
+/* Profile box */
+.company22-profile-box { position:absolute; top:20px; right:30px; padding:6px 12px; border:1px solid #4C3D40; border-radius:20px; background:transparent; color:#4C3D40; display:flex; align-items:center; gap:8px; cursor:pointer; transition:background-color .2s;}
+.company22-profile-box:hover { background:rgba(76,61,64,0.1); }
+
+.company22-dropdown-menu { position:absolute; top:100%; right:0; margin-top:4px; background:#fff; border:1px solid #4C3D40; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); z-index:10; }
+.company22-dropdown-item { padding:8px 12px; cursor:pointer; color:#4C3D40; }
+.company22-dropdown-item:hover { background:#f6eef0; }
+
+/* Projects cards */
+.company22-projects-ui-card { position:absolute; width:190px; height:157px; padding:24px; background:#F6EEF0; box-shadow:0 2px 4px rgba(13,23,33,.08),0 1px 2px rgba(21,30,40,.08); border-radius:8px; }
+.company22-projects-ui-card h3, .projects-ui-card p { margin:0; color:#4C3D40; font-family:'Inter',sans-serif; }
+
+/* Cards panel */
+.company22-cards-panel { padding-top:16px; margin-top:120px; margin-left:90px; }
+.company22-cards-list { display:flex; flex-direction:column; align-items:center; gap:20px; }
+
+/* Individual card */
+.company22-card {
+  position:relative; background:#fff; width:80%; max-width:600px; padding:20px 20px 60px; border-radius:10px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1); display:flex; flex-direction:column; gap:8px;
   
-    /* optional flex layout for any header content */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
-  }
-  .profile-icon {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    cursor: pointer;
-  }
-  .profile-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    
-  }
-  
-  /* Profile name styling */
-  .profile-name {
-    background-color: #4c3d40;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-size: 14px;
-  }
-  /* Profile box styling */
-  .profile-box {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    position: absolute;
-    top: -150px;
-    right: 43px;
-    padding: 6px 12px;
-    border: 1px solid #4C3D40;
-    border-radius: 20px;
-    background-color: transparent;
-    color: #4C3D40;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  .profile-box:hover {
-    background-color: rgba(76, 61, 64, 0.1); /* Light hover effect */
-  }
-  
-  /* Profile name */
-  .profile-name {
-    font-size: 14px;
-  }
-  
-  /* Dropdown menu styling */
-  .dropdown-menu {
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background-color: white;
-    border: 1px solid #4C3D40;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    min-width: 120px;
-    z-index: 10;
-  }
-  
-  .dropdown-item {
-    padding: 8px 12px;
-    cursor: pointer;
-    color: #4C3D40;
-    background-color: white;
-    transition: background-color 0.2s ease;
-  }
-  
-  .dropdown-item:hover {
-    background-color: #f6eef0;
-  }
-  .projects-ui-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 24px;
-    gap: 24px;
-  
-    position: absolute;
-    width: 190px;
-    height: 157px;
-  
-    background: #F6EEF0; /* updated background color */
-  
-    /* Box shadow for elevation */
-    box-shadow: 0px 2px 4px rgba(13, 23, 33, 0.08), 
-                0px 1px 2px rgba(21, 30, 40, 0.08);
-  
-    border-radius: 8px;
-    z-index: 5;
-  }
-  
-  .projects-ui-card h3,
-  .projects-ui-card p {
-    color: #4C3D40; /* coffee pot text color */
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-  }  
+}
+.company22-card h3 { margin:0; font-size:1.2rem; }
+.company22-card p { margin:0; color:#444; }
+
+/* Header for internships & applications */
+.company22-internships-header {
+  width:80%; max-width:600px; margin:0 auto 16px; display:flex; justify-content:flex-end; align-items:center; gap:12px;
+}
+
+/* Search input */
+.company22-search-input {
+  padding:8px 12px; border:1px solid #C8B4D0; border-radius:6px; font-size:.9rem; color:#4C3D40; background:#fff;
+}
+.company22-search-input::placeholder { color:#aaa; }
+
+/* Filter button & dropdowns */
+.company22-filter-container { position:relative; }
+.company22-filter-btn {
+  background:#2b6cb0; color:#fff; border:none; padding:12px 20px; border-radius:6px; font-size:.9rem; cursor:pointer;
+  position:relative;
+}
+.company22-filter-btn::after {
+  content:"▾"; position:absolute; right:12px; top:50%; transform:translateY(-50%);
+  font-size:.7rem; pointer-events:none; color:rgba(255,255,255,.8);
+}
+.company22-filter-btn:hover { opacity:.9; }
+
+.company22-filter-menu {
+  position:absolute; top:calc(100% + 4px); right:0; background:#fff; border:1px solid #C8B4D0;
+  border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.1); z-index:10;
+}
+.company22-filter-item { padding:8px 12px; cursor:pointer; white-space:nowrap; }
+.company22-filter-item:hover { background:#f0f0f0; }
+
+/* Make room for the caret in selects */
+.company22-card select.filter-btn { padding-right:32px !important; }
+
+/* Modal overlay */
+.company22-modal-overlay {
+  position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.3);
+  display:flex; align-items:center; justify-content:center; z-index:20;
+}
+.company22-modal-box {
+  background:#fff; padding:24px; border-radius:8px; max-width:400px; width:90%; box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+.company22-close-btn {
+  margin-top:16px; padding:8px 12px; background:#2b6cb0; color:#fff; border:none; border-radius:6px; cursor:pointer;
+}
+/* make each card a positioning context */
+.company22-card {
+  position: relative;
+}
+
+/* shrink & stick the View Details button */
+.company22-card .view-details-btn {
+  position: absolute;
+  bottom: 12px;    /* distance from card’s bottom edge */
+  right: 12px;     /* distance from card’s right edge */
+  padding: 6px 12px;      /* a bit smaller than the default */
+  font-size: 14px;        /* match the new padding */
+  width: auto;            /* let it size to its text */
+}
+/* make the status label + dropdown use the same font as the card text */
+.company22-card label, 
+.company22-card label select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+/* CompanyDashboard.css */
+
+/* your existing card rule */
+.company22-card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+  /* add this if you don’t already have it */
+  color: #666;  
+}
+
+/* then ensure your status label matches */
+.company22-status-label {
+  color: inherit;  /* now “Status:” will use the same #666 as the rest of the card */
+}
+/* style the status dropdown to match card UI/UX */
+.company22-status-select {
+  /* sizing & layout */
+  padding: 6px 12px;
+  min-width: 120px;
+  font-size: 14px;
+  line-height: 1.4;
+
+  /* flat look */
+  background: transparent;
+  border: 1px solid #ccc;      /* light grey border */
+  border-radius: 4px;
+  color: #333;                 /* same dark text as card body */
+
+  /* remove default arrow background on some browsers */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* add custom arrow via background-image */
+  background-image:
+    url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'10'%20height%3D'6'%20viewBox%3D'0%200%2010%206'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M0%200l5%206%205-6z'%20fill%3D'%23666'%2F%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+}
+
+/* if you need to override filter-btn defaults */
+.company22-status-select.filter-btn {
+  /* remove filter-btn’s background & color */
+  background: transparent;
+  color: #333;
+  border-color: #ccc;
+}
+/* src/components/CompanyDashboard.css */
+
+/* Stronger specificity so it wins over any previous rules */
+.company22-internships-header .post-filter-btn {
+  display: inline-block;
+  /* shape: pill on left, slight corner on right */
+  border: none;
+  border-radius: 20px 6px 6px 20px;
+  background-color: #4C3D40;
+
+  /* padding: extra left for pot, extra right for arrow */
+  padding: 8px 32px 8px 40px;
+
+  /* text styling */
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.4;
+
+  /* remove native arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* two-layer background: coffee pot at left, arrow at right */
+
+  background-image:
+  url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'24'%20height%3D'24'%20viewBox%3D'0%200%2024%2024'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M6%202v20h12V2H6zm2%202h8v16H8V4z'%20fill='%23fff'%2F%3E%3C/svg%3E"),
+  url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'10'%20height%3D'6'%20viewBox%3D'0%200%2010%206'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M0%200l5%206%205-6z'%20fill='%23fff'%2F%3E%3C/svg%3E");
+background-repeat: no-repeat, no-repeat;
+background-position: 12px center, calc(100% - 12px) center;
+background-size: 24px 24px, 10px 6px;
+}
+.company22-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* ensure both buttons size identically */
+.company22-card-actions .filter-btn {
+  width: auto;
+}
+/* flex-container for the two controls */
+.company22-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* make the <select> look exactly like your filter-btn buttons */
+.company22-intern-select {
+  /* reuse all filter-btn styles... */
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #4c3d40;
+  background: #4c3d40;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  appearance: none;
+}
+
+/* optional: add your dropdown arrow */
+.company22-intern-select {
+  background-image:
+    url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'10'%20height%3D'6'%20viewBox%3D'0%200%2010%206'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M0%200l5%206%205-6z'%20fill='%23fff'%2F%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 6px;
+}
+.company22-intern-btn {
+  position: relative;
+  left: -110px;  /* move 8px to the left */
+  top: -25px;   /* move 4px up */
+}
+/* adjust the font-size of the Name field in the Current Interns panel */
+.company22-intern-name {
+  font-size: 18px;
+  font-weight: bold;
+   /* or whatever size you prefer */
+}
+
+/* this is what your applications panel probably uses */
+.company22-card-text {
+  color: #4C3D40;    /* or whatever your app uses */
+  font-size: 14px;
+}
+
+/* any extra size tweak for the name, if needed */
+.company22-intern-name {
+  font-size: 16px;
+  /* color will already match via .card-text */
+}
+/* Make all card text use the same #4C3D40 color */
+/* Apply the same text style to all paragraphs inside cards */
+.company22-cards-panel .card p {
+  color: #4C3D40;
+  font-size: 18px;      /* match your existing font-size */
+  line-height: 1.4;     /* optional: match your spacing */
+}
+.company22-post-filter-select {
+  /* size and shape */
+  padding: 6px 12px;      /* no extra left padding now */
+  min-width: 140px;
+  font-size: 14px;
+  line-height: 1.4;
+  background: #4C3D40;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+
+  /* remove native arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* only one background: the white arrow on the right */
+  background-image:
+    url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'10'%20height%3D'6'%20viewBox%3D'0%200%2010%206'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M0%200l5%206%205-6z'%20fill='%23fff'%2F%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px 6px;
+}
+
+
+
+

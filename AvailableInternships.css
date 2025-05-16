@@ -13,12 +13,6 @@
     background-color: #F6EEF0;
     padding: 20px;
     transition: width 0.3s ease;
-    height: 100vh; /* Make it fill the viewport height */
-    overflow-y: auto; /* Enable vertical scrolling for the whole container */
-    /* Increase width */
-    width: 80vw; /* You can adjust this value as needed */
-    max-width: 1200px; /* Optional: set a max width for large screens */
-    margin: 0 auto;    /* Center the container */
   }
   
   .available-internships-container.collapsed {
@@ -37,7 +31,7 @@
     gap: 20px;
     width: 100%;
     margin-top: 20px;
-    transform: none;
+    transform: translate(-100px, 0px);
   }
   
   /* Internship Card */
@@ -78,7 +72,7 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 20px;
-    transform: none;
+    transform: translate(-100px, 0px);
   }
   
   .search-bar input {
@@ -94,7 +88,7 @@
     gap: 10px;
     justify-content: center;
     margin-bottom: 20px;
-    transform: none;
+    transform: translate(-100px, 0px);
   }
   
   .filters select {

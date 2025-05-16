@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./AvailableInternships.css";
-import FacultySidebar from "./FacultySidebar";
+import FacultySidebar from "./FacultySidebar2";
 import { FaSearch } from "react-icons/fa";
 
-const AvailableInternships = () => {
+const AvailableInternships2 = () => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [internships, setInternships] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -134,4 +134,4 @@ const AvailableInternships = () => {
   );
 };
 
-export default AvailableInternships;
+export default AvailableInternships2;

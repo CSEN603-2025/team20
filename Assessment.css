@@ -1,0 +1,75 @@
+.assessment-wrapper {
+    display: flex;
+    height: 100vh;
+    margin-left:250px ;
+  }
+  
+
+  .welcome-message {
+    margin-bottom: 20px;
+  }
+  
+  .assessment-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    margin-top: 100px;
+  }
+  
+  .assessment-list {
+    background-color: #F6EEF0;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .assessment-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #F6EEF0;
+  }
+  
+  .start-btn {
+    background-color:#C8B4D0;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .assessment-details {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .complete-btn, .post-btn {
+    background-color: #C8B4D0;
+    color: #F6EEF0;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .posted-notice {
+    margin-top: 15px;
+    color: green;
+    font-weight: bold;
+  }
+  
+  .select-assessment {
+    font-size: 14px;
+    color: #888;
+  }
+  
